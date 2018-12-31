@@ -38,5 +38,18 @@ public class LinkRepository {
         doc.append("postedBy", link.getUserId());
         links.insertOne(doc);
     }
+
+    public Link findById(String linkId) {
+        Document doc = links.find(eq("_id", new ObjectId(linkId))).first();
+        return link(doc);
+    }
+
+    private Link link(Document doc) {
+        return new Link(
+                doc.get("_id").toString(),
+                doc.getString("url"),
+                doc.getString("description"),
+                doc.getString("postedBy"));
+    }
 }
 
