@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="GraphqlJava:war exploded">
-    <output-path>$PROJECT_DIR$/target/graphql-java-hackernews</output-path>
+    <output-path>$PROJECT_DIR$/target/GraphqlJava</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -39,7 +39,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/graphql-java-hackernews/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/GraphqlJava/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="GraphqlJava/web/Web" />
     </root>
