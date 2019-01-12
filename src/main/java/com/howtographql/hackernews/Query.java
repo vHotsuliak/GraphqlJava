@@ -6,12 +6,18 @@ import java.util.List;
 
 public class Query implements GraphQLRootResolver {
     private final LinkRepository linkRepository;
+    private final UserRepository userRepository;
 
-    public Query(LinkRepository linkRepository) {
+    public Query(LinkRepository linkRepository, UserRepository userRepository) {
         this.linkRepository = linkRepository;
+        this.userRepository = userRepository;
     }
 
     public List<Link> allLinks(LinkFilter filter) {
         return linkRepository.getAllLinks(filter);
+    }
+
+    public List<User> allUsers() {
+        return userRepository.getAllUsers();
     }
 }

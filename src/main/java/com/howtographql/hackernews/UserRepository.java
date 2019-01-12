@@ -1,9 +1,11 @@
 package com.howtographql.hackernews;
 
 import com.mongodb.client.MongoCollection;
-
 import org.bson.Document;
 import org.bson.types.ObjectId;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -13,6 +15,19 @@ public class UserRepository {
     public UserRepository(MongoCollection<Document> users) {
         this.users = users;
     }
+
+    public List<User> getAllUsers() {
+        List<User> allUsers = new ArrayList<>();
+        for (Document doc: users.find()) {
+            allUsers.add(new User(
+                    doc.get("_id").toString(),
+                    doc.getString("name"),
+                    doc.getString("email"),
+                    doc.getString("password")));
+        }
+        return allUsers;
+    }
+
 
     public User findByEmail(String email) {
         Document doc = users.find(eq("email", email)).first();

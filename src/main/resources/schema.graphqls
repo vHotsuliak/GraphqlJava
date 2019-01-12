@@ -5,6 +5,7 @@ schema {
 
 type Query {
   allLinks(filter: LinkFilter): [Link]
+  allUsers: [User]
 }
 
 input LinkFilter {
@@ -23,7 +24,7 @@ type Mutation {
     createUser(name: String!, authProvider: AuthData!): User
     createLink(url: String!, description: String!): Link
     signinUser(auth: AuthData): SigninPayload
-      createVote(linkId: ID, userId: ID): Vote
+    createVote(linkId: ID, userId: ID): Vote
 }
 
 type Vote {

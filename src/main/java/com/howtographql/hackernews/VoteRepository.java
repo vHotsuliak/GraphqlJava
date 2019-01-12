@@ -1,7 +1,6 @@
 package com.howtographql.hackernews;
 
 import com.mongodb.client.MongoCollection;
-
 import org.bson.Document;
 
 import java.time.ZonedDateTime;
