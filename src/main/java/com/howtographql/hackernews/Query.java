@@ -17,7 +17,7 @@ public class Query implements GraphQLRootResolver {
         return linkRepository.getAllLinks(filter);
     }
 
-    public List<User> allUsers() {
-        return userRepository.getAllUsers();
+    public List<User> allUsers(UserFilter filter) {
+        return userRepository.getAllUsers(filter);
     }
 }
