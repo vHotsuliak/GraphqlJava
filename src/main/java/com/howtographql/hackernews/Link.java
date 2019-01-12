@@ -14,6 +14,10 @@ public class Link {
         this(null, url, description, userId);
     }
 
+    public Link(String url, String description) {
+        this(null, url, description, null);
+    }
+
     public Link(String id, String url, String description, String userId) {
         this.id = id;
         this.url = url;
